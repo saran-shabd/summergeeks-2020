@@ -52,6 +52,7 @@ class Checkout extends Component {
           is_error: true,
           error: "Visitor checked out"
         });
+        this.clearFields();
       })
       .catch(error => {
         if (400 === error.response.status) {
@@ -82,6 +83,10 @@ class Checkout extends Component {
         }
       })
       .finally(() => this.setState({ loading: false }));
+  };
+
+  clearFields = () => {
+    this.setState({ visitor_phone: "" });
   };
 
   render() {

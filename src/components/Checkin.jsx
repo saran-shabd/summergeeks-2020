@@ -20,6 +20,7 @@ class Checkin extends Component {
     host_name: "",
     host_email: "",
     host_phone: "",
+    host_address: "",
     // visitor details
     visitor_name: "",
     visitor_email: "",
@@ -36,6 +37,7 @@ class Checkin extends Component {
       host_name,
       host_email,
       host_phone,
+      host_address,
       visitor_name,
       visitor_email,
       visitor_phone
@@ -52,6 +54,9 @@ class Checkin extends Component {
       null === host_phone ||
       "" === host_phone ||
       undefined === host_phone ||
+      null === host_address ||
+      "" === host_address ||
+      undefined === host_address ||
       null === visitor_name ||
       "" === visitor_name ||
       undefined === visitor_name ||
@@ -75,7 +80,8 @@ class Checkin extends Component {
         host: {
           name: host_name,
           email: host_email,
-          phone_number: host_phone
+          phone_number: host_phone,
+          address: host_address
         },
         visitor: {
           name: visitor_name,
@@ -89,6 +95,7 @@ class Checkin extends Component {
           is_error: true,
           error: "Visitor checked in"
         });
+        this.clearFields();
       })
       .catch(error => {
         console.log(error);
@@ -126,6 +133,20 @@ class Checkin extends Component {
       })
       // stop the loading spinner
       .finally(() => this.setState({ loading: false }));
+  };
+
+  clearFields = () => {
+    this.setState({
+      // host details
+      host_name: "",
+      host_email: "",
+      host_phone: "",
+      host_address: "",
+      // visitor details
+      visitor_name: "",
+      visitor_email: "",
+      visitor_phone: ""
+    });
   };
 
   render() {
@@ -176,6 +197,15 @@ class Checkin extends Component {
                 <InputAdornment position="start">+91</InputAdornment>
               )
             }}
+          ></TextField>
+          <br></br>
+          <TextField
+            required
+            fullWidth
+            label="Address"
+            margin="normal"
+            value={this.state.host_address}
+            onChange={e => this.setState({ host_address: e.target.value })}
           ></TextField>
           <br></br>
           <br></br>
