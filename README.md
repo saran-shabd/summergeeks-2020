@@ -42,17 +42,27 @@ You can find GitHub repository of the underlying REST API [here](https://www.git
 #### 1. Homepage
 <img src="screenshots/Homepage.png" alt="Not able to render the image" />
 
+<br>
+
 #### 2. Checkin Visitor
 <img src="screenshots/Check%20In.png" alt="Not able to render the image" width="400" />
+
+<br>
 
 #### 3. SMS sent to the Host
 <img src="screenshots/SMS.png" alt="Not able to render the image" width="400" />
 
+<br>
+
 #### 4. Email sent to the Host
 <img src="screenshots/New%20Visitor.png" alt="Not able to render the image" width="400" />
 
+<br>
+
 #### 5. Checkout Visitor
 <img src="screenshots/Check%20Out.png" alt="Not able to render the image" width="400" />
+
+<br>
 
 #### 6. Email sent to the Visitor
 <img src="screenshots/Visit%20Complete.png" alt="Not able to render the image" width="400" />
